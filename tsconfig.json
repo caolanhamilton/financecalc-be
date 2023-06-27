@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "NodeNext",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["./*.ts", "./models/**/*.ts, ./controllers/**/*.ts", "@types/aws-cognito-express.d.ts", "@types/**/*.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
