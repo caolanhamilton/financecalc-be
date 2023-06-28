@@ -42,11 +42,7 @@ const authConfig = {
   tokenUse: ["id", "access"],
   audience: ["33bt19dahld5eq9b8t9qavno6o"],
 };
-app.use((req, res, next) => {
-  req.path === "/users" && req.method == "POST"
-    ? next()
-    : authenticate(authConfig)(req, res, next);
-});
+app.use(authenticate(authConfig));
 
 app.use(checkCognitoObjectExists);
 
@@ -54,7 +50,7 @@ app.get("/applications", getApplicationsByUserId);
 
 app.post("/applications", postApplication);
 
-app.post("/users", postUser); // setup cors for this to only allow calls from la
+app.post("/users", postUser); 
 
 app.use(authenticationError());
 
