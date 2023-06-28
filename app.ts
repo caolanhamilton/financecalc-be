@@ -43,7 +43,7 @@ const authConfig = {
   audience: ["33bt19dahld5eq9b8t9qavno6o"],
 };
 app.use((req, res, next) => {
-  req.path === "/users" && req.method == "GET"
+  req.path === "/users" && req.method == "POST"
     ? next()
     : authenticate(authConfig)(req, res, next);
 });

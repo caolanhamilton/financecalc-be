@@ -24,6 +24,7 @@ export const checkCognitoObjectExists = (
   res: Response,
   next: NextFunction
 ) => {
+  if (req.path === "/users" && req.method == "POST") next();
   if (!req.cognito || !req.cognito.sub) {
     return res.status(401).send({
       message: "Unauthorized",
