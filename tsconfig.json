@@ -6,6 +6,7 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["./*.ts", "./models/**/*.ts, ./controllers/**/*.ts", "@types/aws-cognito-express.d.ts", "@types/**/*.d.ts"],
+  "ts-node": {  "files": true },
+  "include": ["./*.ts", "./models/**/*.ts, ./controllers/**/*.ts", "@types/aws-cognito-express.d.ts", "@types/*.d.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
