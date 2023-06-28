@@ -17,7 +17,6 @@ export async function addUser(sub: string, user: User) {
       [sub, user.first_name, user.second_name, user.email]
     );
   } catch (error) {
-    console.log(error);
     throw new Error("Error adding user to DB");
   }
 }

@@ -9,7 +9,6 @@ export async function fetchApplicationsByUserId(sub: string) {
     );
     return res.rows;
   } catch (error) {
-    console.log("Error fetching applications from DB:", error);
     throw new Error("Error fetching applications from DB");
   }
 }
@@ -31,9 +30,7 @@ export async function addUserApplication(
         uid,
       ]
     );
-    console.log("Inserted application:", res);
   } catch (error) {
-    console.log("Error adding application to DB:", error);
     throw new Error("Error adding application to DB");
   }
 }

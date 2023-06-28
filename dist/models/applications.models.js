@@ -39,10 +39,8 @@ function addUserApplication(uid, application) {
                 application.apr,
                 uid,
             ]);
-            console.log("Inserted application:", res);
         }
         catch (error) {
-            console.log("Error adding application to DB:", error);
             throw new Error("Error adding application to DB");
         }
     });
