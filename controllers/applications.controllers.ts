@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { addUserApplication, fetchApplicationsByUserId } from "../models/applications.models";
 
 export async function getApplicationsByUserId(req: Request, res: Response) {
-  console.log(req)
   try {
     const applications = await fetchApplicationsByUserId(req.cognito!.sub);
     res.status(200).send({ applications });
@@ -14,7 +13,6 @@ export async function getApplicationsByUserId(req: Request, res: Response) {
 }
 
 export async function postApplication(req: Request, res: Response) {
-  console.log(req.body, req.cognito!.sub)
   try {
     await addUserApplication(
       req.cognito!.sub,
