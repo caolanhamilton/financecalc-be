@@ -1,12 +1,5 @@
-import { type } from "os";
 import dbPool from "../connection";
-
-type User = {
-  sub: string;
-  first_name: string;
-  second_name: string;
-  email: string;
-};
+import { User } from "../types/types";
 
 export async function addUser(sub: string, user: User) {
   try {

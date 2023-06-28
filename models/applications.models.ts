@@ -1,4 +1,5 @@
 import dbPool from "../connection";
+import { Application } from "../types/types";
 
 export async function fetchApplicationsByUserId(sub: string) {
   try {
@@ -15,14 +16,7 @@ export async function fetchApplicationsByUserId(sub: string) {
 
 export async function addUserApplication(
   uid: string,
-  application: {
-    treatment_cost: number;
-    deposit: number;
-    loan_amount: number;
-    monthly_payments: number;
-    payment_length: number;
-    apr: number;
-  }
+  application: Application
 ) {
   try {
     const res = await dbPool.query(

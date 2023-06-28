@@ -1,4 +1,19 @@
-import { Request, Response, NextFunction } from "express";
+export type User = {
+  sub: string;
+  first_name: string;
+  second_name: string;
+  email: string;
+};
+
+export type Application = {
+  treatment_cost: number;
+  deposit: number;
+  loan_amount: number;
+  monthly_payments: number;
+  payment_length: number;
+  apr: number;
+};
+
 declare global {
   namespace Express {
     interface Request {
@@ -19,15 +34,3 @@ declare global {
     }
   }
 }
-export const checkCognitoObjectExists = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  if (!req.cognito || !req.cognito.sub) {
-    return res.status(401).send({
-      message: "Unauthorized",
-    });
-  }
-  next();
-};
